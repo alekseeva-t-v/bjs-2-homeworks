@@ -80,9 +80,9 @@ function makeWork(arrOfArr, func) {
   for (let arr of arrOfArr) {
     let result = func(...arr);
     if (result > maxWorkerResult) {
-      maxWorkerResult = result
+      maxWorkerResult = result;
     }
   }
 
-  return maxWorkerResult
+  return maxWorkerResult;
 }
