@@ -11,21 +11,19 @@ Student.prototype.setSubject = function (subjectName) {
 
 Student.prototype.addMarks = function (...marks) {
   if (this.marks) {
-    marksArr = [...marks];
-    marksArr.forEach((value) => {
-      this.marks.push(value);
-    });
+    this.marks.push(...marks);
   }
 };
 
 Student.prototype.getAverage = function () {
   if (!this.marks || this.marks.length === 0) {
     return 0;
-  } else {
-    return this.marks.reduce((acc, value) => {
-      return acc + value;
-    }, 0) / this.marks.length;
   }
+  return (
+    this.marks.reduce((acc, value) => {
+      return acc + value;
+    }, 0) / this.marks.length
+  );
 };
 
 Student.prototype.exclude = function (reason) {
