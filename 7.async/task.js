@@ -9,11 +9,13 @@ class AlarmClock {
       throw new Error('Отсутствуют обязательные аргументы');
     }
 
-    this.alarmCollection.forEach((alarmElem) => {
-      if (alarmElem[time]) {
-        console.warn('Уже присутствует звонок на это же время');
-      }
-    });
+    if (
+      this.alarmCollection.some((alarmElem) => {
+        return alarmElem[time];
+      })
+    ) {
+      console.warn('Уже присутствует звонок на это же время');
+    }
 
     this.alarmCollection.push({
       callback: callback,
@@ -66,5 +68,3 @@ class AlarmClock {
     this.alarmCollection = [];
   }
 }
-
-
