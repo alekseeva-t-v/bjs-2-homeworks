@@ -1,3 +1,9 @@
+/**
+ * Возвращает минимальное, максимальное и среднее арифметическое значений массива.
+ *
+ * @param {object} arr массив / последовательность чисел.
+ * @return {object} объект содержащий минимальное, максимальное и среднее арифметическое значений массива
+ */
 function getArrayParams(...arr) {
   let min = Math.min(...arr);
   let max = Math.max(...arr);
@@ -16,6 +22,12 @@ function getArrayParams(...arr) {
   };
 }
 
+/**
+ * Возвращает сумму элементов.
+ *
+ * @param {object} arr массив / последовательность чисел.
+ * @return {number} сумма элементов
+ */
 function summElementsWorker(...arr) {
   if (arr.length === 0) {
     return 0;
@@ -30,6 +42,12 @@ function summElementsWorker(...arr) {
   return sum;
 }
 
+/**
+ * Возвращает разницу максимального и минимального элементов.
+ *
+ * @param {object} arr массив / последовательность чисел.
+ * @return {number} разница максимального и минимального элементов
+ */
 function differenceMaxMinWorker(...arr) {
   if (arr.length === 0) {
     return 0;
@@ -41,6 +59,12 @@ function differenceMaxMinWorker(...arr) {
   return max - min;
 }
 
+/**
+ * Возвращает разницу сумм чётных и нечётных элементов.
+ *
+ * @param {object} arr массив / последовательность чисел.
+ * @return {number} разница сумм чётных и нечётных элементов
+ */
 function differenceEvenOddWorker(...arr) {
   if (arr.length === 0) {
     return 0;
@@ -59,6 +83,12 @@ function differenceEvenOddWorker(...arr) {
   return sumEvenElement - sumOddElement;
 }
 
+/**
+ * Возвращает среднее значение четных элементов.
+ *
+ * @param {object} arr массив / последовательность чисел.
+ * @return {number} среднее хначение четных элементов
+ */
 function averageEvenElementsWorker(...arr) {
   if (arr.length === 0) {
     return 0;
@@ -73,11 +103,16 @@ function averageEvenElementsWorker(...arr) {
       countEvenElement += 1;
     }
   }
-  console.log(sumEvenElement);
-  console.log(countEvenElement);
   return sumEvenElement / countEvenElement;
 }
 
+/**
+ * Возвращает максимальный результат функции насадки.
+ *
+ * @param {object} arr массив данных.
+ * @param {object} func функция насадка.
+ * @return {number} максимальный результат функции насадки
+ */
 function makeWork(arrOfArr, func) {
   let maxWorkerResult = -Infinity;
 
