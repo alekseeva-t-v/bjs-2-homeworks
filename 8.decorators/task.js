@@ -1,4 +1,9 @@
-//Задача № 1
+/**
+ * Кеширующий декоратор. Отвечает за кеширование только последних пяти различных вызовов функции. Возвращает строку по определенному условию
+ *
+ * @param {function} func функция, которую необходимо декарировать.
+ * @return {function} декорированная функция.
+ */
 function cachingDecoratorNew(func) {
   function wrapper(...args) {
     const hash = md5([...args]);
@@ -20,7 +25,13 @@ function cachingDecoratorNew(func) {
   return wrapper;
 }
 
-//Задача № 2
+/**
+ * Debounce декоратор
+ *
+ * @param {function} func функция, которую необходимо декарировать.
+ * @param {number} delay интервал времени.
+ * @return {function} декорированная функция.
+ */
 function debounceDecoratorNew(func, delay) {
   let timeoutID = null;
   let isTrottled = false;
@@ -41,6 +52,9 @@ function debounceDecoratorNew(func, delay) {
     }
   }
 
+  console.log(func);
+  console.log(delay);
+  console.log(wrapper)
   wrapper.count = 0;
   wrapper.allCount = 0;
   return wrapper;
